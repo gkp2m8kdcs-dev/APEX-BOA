@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support — APEX BOA</title>
+    <meta name="description" content="Get help with APEX BOA — personal investment journal. FAQ, troubleshooting, and direct contact.">
+    <style>
+        :root {
+            --bg-deep: #0a0e1a;
+            --bg-card: #131826;
+            --accent: #5b8def;
+            --accent-2: #8b5cf6;
+            --positive: #34d399;
+            --warning: #fbbf24;
+            --text-primary: #f4f5f7;
+            --text-secondary: #9aa3b8;
+            --stroke: rgba(255,255,255,0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--stroke);
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+        }
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--text-primary); text-decoration: none; }
+
+        .page-header {
+            padding: 80px 0 40px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(91,141,239,0.15), transparent 60%);
+        }
+        .icon-large {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: rgba(91,141,239,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 24px;
+        }
+        h1 {
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        main {
+            padding: 40px 0 80px;
+        }
+
+        /* Contact Card */
+        .contact-card {
+            background: linear-gradient(135deg, rgba(91,141,239,0.1), rgba(139,92,246,0.06));
+            border: 1px solid rgba(91,141,239,0.25);
+            border-radius: 20px;
+            padding: 36px;
+            text-align: center;
+            margin-bottom: 48px;
+        }
+        .contact-card h2 {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .contact-card p {
+            color: var(--text-secondary);
+            margin-bottom: 24px;
+        }
+        .email-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 14px 28px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            color: white;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 16px;
+            box-shadow: 0 8px 24px rgba(91,141,239,0.3);
+            transition: transform 0.2s ease;
+        }
+        .email-button:hover {
+            transform: translateY(-1px);
+            text-decoration: none;
+        }
+        .response-time {
+            margin-top: 16px;
+            font-size: 13px;
+            color: var(--text-secondary);
+        }
+
+        h2.section {
+            font-size: 26px;
+            font-weight: 800;
+            margin: 48px 0 24px;
+            letter-spacing: -0.5px;
+        }
+
+        /* FAQ */
+        .faq {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+        details {
+            background: var(--bg-card);
+            border: 1px solid var(--stroke);
+            border-radius: 14px;
+            overflow: hidden;
+            transition: border-color 0.2s ease;
+        }
+        details[open] {
+            border-color: rgba(91,141,239,0.3);
+        }
+        summary {
+            list-style: none;
+            cursor: pointer;
+            padding: 18px 22px;
+            font-weight: 600;
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+        }
+        summary::-webkit-details-marker { display: none; }
+        summary::after {
+            content: "+";
+            font-size: 22px;
+            font-weight: 300;
+            color: var(--accent);
+            transition: transform 0.2s ease;
+            flex-shrink: 0;
+        }
+        details[open] summary::after {
+            content: "−";
+        }
+        summary:hover {
+            background: rgba(255,255,255,0.02);
+        }
+        .faq-body {
+            padding: 0 22px 20px;
+            color: var(--text-secondary);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+        .faq-body p { margin-bottom: 10px; }
+        .faq-body ul {
+            list-style: disc;
+            padding-left: 20px;
+            margin: 10px 0;
+        }
+        .faq-body li { margin-bottom: 6px; }
+
+        /* Tips grid */
+        .tips {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
+        }
+        .tip {
+            background: var(--bg-card);
+            border: 1px solid var(--stroke);
+            border-radius: 14px;
+            padding: 22px;
+        }
+        .tip h3 {
+            font-size: 15px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .tip p {
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid var(--stroke);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">A</span>
+                    <span>APEX BOA</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="support.html">Support</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="icon-large">💬</div>
+            <h1>Support</h1>
+            <p class="subtitle">A real person reads every message. We typically reply within 1–2 business days.</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="contact-card">
+                <h2>Get in Touch</h2>
+                <p>For bug reports, feature requests, account-style questions, or anything else.</p>
+                <a href="mailto:edible197@gmail.com?subject=APEX%20BOA%20Support" class="email-button">
+                    ✉️ Email Support
+                </a>
+                <p class="response-time">edible197@gmail.com · Typical reply: 1–2 business days</p>
+            </div>
+
+            <h2 class="section">Frequently Asked Questions</h2>
+            <div class="faq">
+                <details>
+                    <summary>Where is my data stored?</summary>
+                    <div class="faq-body">
+                        <p>All APEX BOA data is stored locally on your iPhone using standard iOS on-device storage. We do not maintain any servers, accounts, or cloud sync. If you uninstall the app or wipe your device without exporting first, the data cannot be recovered.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How do I back up my data?</summary>
+                    <div class="faq-body">
+                        <p>Open <strong>Settings → Export / Import</strong> and tap <strong>Export</strong>. APEX BOA will generate a single JSON file containing every holding, transaction, watchlist item, note, and receipt. Save that file to your Files app, iCloud Drive, or any other location you trust.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How do I restore from a backup?</summary>
+                    <div class="faq-body">
+                        <p>Open <strong>Settings → Export / Import</strong>, tap <strong>Import</strong>, and select the previously exported JSON file. APEX BOA will merge the backup into the current journal.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Why aren't live prices showing?</summary>
+                    <div class="faq-body">
+                        <p>APEX BOA is an offline-first journal. Live market data feeds are not part of the core experience and may not be available in your region or at all times. All price values you see are intended for reference and journaling — they are not investment advice. To record a price you observed, simply edit the transaction or holding with the price you saw.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How is cost basis calculated?</summary>
+                    <div class="faq-body">
+                        <p>APEX BOA uses a weighted-average cost basis. Buys add to your quantity and total cost. Sells reduce quantity at the current average and realize gain or loss. Dividends and fees adjust cost basis per share. This is intended as a journal-grade approximation — verify all figures with your broker statements before filing taxes.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Does APEX BOA connect to my broker?</summary>
+                    <div class="faq-body">
+                        <p>No. APEX BOA does not connect to any brokerage, exchange, or wallet. It does not place, route, or execute trades. It does not custody any of your assets. You remain solely responsible for all transactions recorded in the journal.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>What permissions does the app request?</summary>
+                    <div class="faq-body">
+                        <p>The app only requests the iOS permissions you actively use:</p>
+                        <ul>
+                            <li><strong>Camera</strong> — only when you choose to capture a receipt</li>
+                            <li><strong>Photo Library</strong> — only when you choose to import an existing receipt</li>
+                        </ul>
+                        <p>No notification, Face ID, contacts, or location permissions are requested.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>How do I erase all my data?</summary>
+                    <div class="faq-body">
+                        <p>Open <strong>Settings → Erase</strong> and confirm. This permanently deletes every holding, transaction, watchlist item, note, and receipt on the device. This action cannot be undone — export a backup first if you want to keep anything.</p>
+                    </div>
+                </details>
+
+                <details>
+                    <summary>Is APEX BOA investment advice?</summary>
+                    <div class="faq-body">
+                        <p>No. APEX BOA is a personal journal and analytical companion. Nothing in the app constitutes financial, investment, tax, or legal advice. The disclaimer is presented during onboarding and is reachable any time from <strong>Settings → Disclaimer</strong>.</p>
+                    </div>
+                </details>
+            </div>
+
+            <h2 class="section">Quick Tips</h2>
+            <div class="tips">
+                <div class="tip">
+                    <h3>📸 Receipt Tips</h3>
+                    <p>Photograph receipts in good lighting on a flat surface. Use the "Attach to Trade" flow immediately after logging a transaction.</p>
+                </div>
+                <div class="tip">
+                    <h3>🎯 Watchlist Targets</h3>
+                    <p>Set target prices on watchlist items. A green check seals every name that has crossed your target — your private shortlist.</p>
+                </div>
+                <div class="tip">
+                    <h3>📊 Chart Filters</h3>
+                    <p>Tap any chart to switch time ranges. The Insights tab lets you isolate top holdings, sectors, or asset classes.</p>
+                </div>
+                <div class="tip">
+                    <h3>💾 Backup Habit</h3>
+                    <p>Export a JSON backup monthly. Email it to yourself or save it to iCloud Drive — you control where it lives.</p>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p>© 2026 APEX BOA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>

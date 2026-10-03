@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy — APEX BOA</title>
+    <meta name="description" content="APEX BOA Privacy Policy. Your data stays on your device. No accounts, no servers, no tracking.">
+    <style>
+        :root {
+            --bg-deep: #0a0e1a;
+            --bg-card: #131826;
+            --accent: #5b8def;
+            --accent-2: #8b5cf6;
+            --positive: #34d399;
+            --text-primary: #f4f5f7;
+            --text-secondary: #9aa3b8;
+            --stroke: rgba(255,255,255,0.08);
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            background: var(--bg-deep);
+            color: var(--text-primary);
+            line-height: 1.7;
+            -webkit-font-smoothing: antialiased;
+        }
+        a { color: var(--accent); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .container {
+            max-width: 820px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: rgba(10, 14, 26, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--stroke);
+        }
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 64px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 800;
+            font-size: 18px;
+            letter-spacing: 2px;
+            color: var(--text-primary);
+        }
+        .logo-mark {
+            width: 32px;
+            height: 32px;
+            border-radius: 9px;
+            background: linear-gradient(135deg, var(--accent), var(--accent-2));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 900;
+            color: white;
+            font-size: 16px;
+        }
+        .nav-links {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+        .nav-links a {
+            color: var(--text-secondary);
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-links a:hover { color: var(--text-primary); text-decoration: none; }
+
+        .page-header {
+            padding: 80px 0 40px;
+            text-align: center;
+            background:
+                radial-gradient(circle at 50% 0%, rgba(52,211,153,0.12), transparent 60%);
+        }
+        .icon-large {
+            width: 72px;
+            height: 72px;
+            border-radius: 18px;
+            background: rgba(52,211,153,0.15);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 24px;
+        }
+        h1 {
+            font-size: clamp(32px, 5vw, 44px);
+            font-weight: 800;
+            letter-spacing: -1px;
+            margin-bottom: 16px;
+        }
+        .subtitle {
+            font-size: 18px;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 12px;
+        }
+        .meta {
+            color: var(--text-secondary);
+            font-size: 13px;
+            margin-top: 20px;
+        }
+
+        main {
+            padding: 40px 0 80px;
+        }
+        .card {
+            background: var(--bg-card);
+            border: 1px solid var(--stroke);
+            border-radius: 16px;
+            padding: 28px;
+            margin-bottom: 20px;
+        }
+        h2 {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 14px;
+            color: var(--text-primary);
+        }
+        h3 {
+            font-size: 16px;
+            font-weight: 700;
+            margin: 18px 0 8px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.6px;
+        }
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 12px;
+        }
+        ul {
+            list-style: none;
+            margin: 12px 0;
+        }
+        li {
+            padding-left: 28px;
+            position: relative;
+            margin-bottom: 10px;
+            color: var(--text-secondary);
+        }
+        li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--positive);
+            font-weight: 700;
+        }
+        li.no::before {
+            content: "✕";
+            color: #ef4444;
+        }
+
+        .highlight-box {
+            background: linear-gradient(135deg, rgba(52,211,153,0.08), rgba(91,141,239,0.06));
+            border: 1px solid rgba(52,211,153,0.25);
+            border-radius: 14px;
+            padding: 20px 24px;
+            margin: 24px 0;
+            text-align: center;
+        }
+        .highlight-box p {
+            color: var(--text-primary);
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .contact-box {
+            background: var(--bg-card);
+            border: 1px solid var(--stroke);
+            border-radius: 14px;
+            padding: 24px;
+            text-align: center;
+            margin-top: 32px;
+        }
+        .contact-box a {
+            font-size: 18px;
+            font-weight: 600;
+        }
+
+        footer {
+            padding: 32px 0;
+            border-top: 1px solid var(--stroke);
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 13px;
+        }
+        .footer-links {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 16px;
+            flex-wrap: wrap;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav">
+                <a href="index.html" class="logo">
+                    <span class="logo-mark">A</span>
+                    <span>APEX BOA</span>
+                </a>
+                <div class="nav-links">
+                    <a href="index.html">Home</a>
+                    <a href="support.html">Support</a>
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <div class="page-header">
+        <div class="container">
+            <div class="icon-large">🔒</div>
+            <h1>Privacy Policy</h1>
+            <p class="subtitle">Your data stays on this device. No accounts. No servers. No tracking.</p>
+            <p class="meta">Last updated: October 3, 2026</p>
+        </div>
+    </div>
+
+    <main>
+        <div class="container">
+
+            <div class="highlight-box">
+                <p>APEX BOA is designed from the ground up as an offline-first personal journal. Nothing in this app talks to a server unless you explicitly export a backup file yourself.</p>
+            </div>
+
+            <div class="card">
+                <h2>1. Overview</h2>
+                <p>APEX BOA ("we", "our", "the app") is a personal investment journal application for iOS. We respect your privacy and have built the app so that the data you record stays under your control. This Privacy Policy explains what information the app stores, what it does not store, and what choices you have.</p>
+                <p>By using APEX BOA, you agree to the practices described in this policy.</p>
+            </div>
+
+            <div class="card">
+                <h2>2. Information We Store Locally On Your Device</h2>
+                <p>All data you create in APEX BOA is stored locally on your iPhone using Apple's standard on-device storage. The data never leaves your device unless you choose to export it. Specifically, we store:</p>
+                <h3>Holdings &amp; Transactions</h3>
+                <ul>
+                    <li>Holdings you add (symbol, name, asset class, notes, sector)</li>
+                    <li>Transactions you record (date, type, quantity, price, fees, notes, tags)</li>
+                    <li>Watchlist items and research notes</li>
+                    <li>Receipt images you import through the camera or photo library</li>
+                    <li>Display preferences (theme, currency, your chosen display name)</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>3. What We Never Do</h2>
+                <p>APEX BOA does not collect, transmit, or share any of your data. We never:</p>
+                <ul>
+                    <li class="no">Sync to any cloud, server, or third-party service</li>
+                    <li class="no">Collect analytics, telemetry, or crash reports</li>
+                    <li class="no">Contact your broker, bank, or wallet</li>
+                    <li class="no">Transmit any data over the network</li>
+                    <li class="no">Request notification, Face ID, contacts, or location permissions</li>
+                    <li class="no">Sell, rent, or trade your information</li>
+                    <li class="no">Use cookies, tracking pixels, or device fingerprinting</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h2>4. Permissions Requested by the App</h2>
+                <p>APEX BOA requests only the iOS permissions necessary for the features you actively use:</p>
+                <h3>Camera Permission</h3>
+                <p>Used solely to capture a photo of a receipt. Images are stored on-device and attached to a transaction you choose. You may deny this permission and still use every other feature.</p>
+                <h3>Photo Library Permission</h3>
+                <p>Used solely when you choose to import an existing receipt from your photo library. Images are stored on-device and attached to a transaction you choose. You may deny this permission and still use every other feature.</p>
+                <p>We do not request permission for notifications, Face ID, contacts, location, microphone, or background tracking.</p>
+            </div>
+
+            <div class="card">
+                <h2>5. Your Control Over Your Data</h2>
+                <p>Because your data lives on your device, you have full control at all times. You can:</p>
+                <ul>
+                    <li>Export a full backup as JSON from Settings → Export / Import</li>
+                    <li>Restore from a previous JSON backup on any device</li>
+                    <li>Reset to sample data (Settings → Reset) to replace your data with demo content</li>
+                    <li>Erase all data (Settings → Erase) to permanently delete everything</li>
+                </ul>
+                <p>Uninstalling the app removes all locally stored data. If your device is lost, damaged, or wiped without a backup, the data cannot be recovered by us — because we never had it.</p>
+            </div>
+
+            <div class="card">
+                <h2>6. Third-Party Services</h2>
+                <p>APEX BOA does not integrate any third-party analytics, advertising, attribution, social, or crash-reporting SDKs. The app contains no third-party trackers of any kind.</p>
+            </div>
+
+            <div class="card">
+                <h2>7. Children</h2>
+                <p>APEX BOA is intended for adult users managing their own finances. The app is rated 4+ and does not knowingly collect any information from children under 13.</p>
+            </div>
+
+            <div class="card">
+                <h2>8. International Users</h2>
+                <p>Because no personal data leaves your device, there is no cross-border data transfer to govern. If you choose to email us for support, your message is handled using a standard email provider governed by its own privacy practices.</p>
+            </div>
+
+            <div class="card">
+                <h2>9. Changes to This Policy</h2>
+                <p>If we update this Privacy Policy, the changes will be posted on this page with a revised "Last updated" date. Because the app does not contact you, we encourage you to review this page periodically.</p>
+            </div>
+
+            <div class="card">
+                <h2>10. Contact</h2>
+                <p>If you have any questions about this Privacy Policy or the data practices of APEX BOA, please reach out:</p>
+                <div class="contact-box">
+                    <a href="mailto:edible197@gmail.com">📧 edible197@gmail.com</a>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">Home</a>
+                <a href="support.html">Support</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="terms.html">Terms</a>
+            </div>
+            <p>© 2026 APEX BOA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
